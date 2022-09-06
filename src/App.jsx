@@ -9,6 +9,7 @@ import ForgotPassword from './views/ForgotPassword';
 function App() {
   return (
     <Routes>
+      {/* Rutas publicas */}
       <Route path='/' element={<AuthLayout />} >
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
