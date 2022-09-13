@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import registro from '../assets/registro.png'
 const Register = () => {
   return (
-    <div className='py-5 bg-gradient-to-tr from-orange-200 to-orange-400 flex justify-center items-center'>
+    <div className='py-5 bg-slate-300 flex justify-center items-center'>
       <div className='w-11/12 sm:w-8/12 md:w-7/12 lg:w-4/12 bg-white shadow border rounded-xl px-10 py-5' >
         <div className='flex justify-center'>
         <img src={registro} alt="" width={100}/>
@@ -33,11 +33,8 @@ const Register = () => {
             <button type='submit' className='hover:bg-orange-700 transition-all duration-300 bg-orange-500 px-8 py-1 rounded-xl text-white font-bold '>Registrar</button>
           </div>
           <div>
-          <Link className='hover:text-blue-600 transition-all duration-300 text-sm block text-center mt-4' to="/login">
+          <Link className='hover:text-blue-600  transition-all duration-300 text-xs block text-center mt-4' to="/login">
             ¿Ya tienes cuenta?, Inicia Sesión    
-        </Link>
-        <Link className='hover:text-blue-600 transition-all duration-300 text-sm block text-center mt-1' to="/forgot-password">
-            ¿Olvidaste tu contraseña?, Recuperala    
         </Link>
           </div>
         </form>
