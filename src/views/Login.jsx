@@ -43,7 +43,6 @@ const Login = () => {
       }
     } catch (error) {
       setLoading(false);
-      console.log(error.response.data);
       if (error.response.data.status == 400) {
         setEmailError(error.response.data.errors.email);
         setPasswordError(error.response.data.errors.password);
