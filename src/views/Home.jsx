@@ -1,17 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
 import Header from '../components/templates/Header';
 import Footer from '../components/templates/footer';
+import First from "../components/home/First";
+import Second from "../components/home/Second";
+import Third from "../components/home/Third";
+import Fourth from "../components/home/Fourth";
+
 
 const Home = () => {
   
   return (
-    <div>
+    <div className='bg-[#E5E9F2] w-full '>
+
         <Header />
-        <h1 className='text-xl font-bold uppercase xs:text-blue-800 '>Desde Home</h1>
-        <Link to='/login'>
+        {/* <Link to='/login'>
             Ir a Login
-        </Link>
+        </Link> */}
+        <First />
+        <Second />
+        <Third />
+        <Fourth />
         <Footer />
     </div>
   )
