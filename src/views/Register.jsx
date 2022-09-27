@@ -36,6 +36,7 @@ const Register = () => {
           <Link className='hover:text-blue-600  transition-all duration-300 text-xs block text-center mt-4' to="/login">
             ¿Ya tienes cuenta?, Inicia Sesión    
         </Link>
+        <Link to="/addvet">Agregar Veterinaria</Link>
           </div>
         </form>
       </div>
