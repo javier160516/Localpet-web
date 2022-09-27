@@ -8,6 +8,7 @@ import ConfirmAccount from './views/ConfirmAccount';
 import ForgotPassword from './views/ForgotPassword';
 import ConfirmResetPassword from './views/ConfirmResetPassword';
 import { AuthProvider } from './context/AuthProvider';
+import AddVet from './views/AddVet';
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
             <Route path='confirm/:token' element={<ConfirmAccount />}/>
             <Route path='forgot-password' element={<ForgotPassword />} />
             <Route path='forgot-password/:token' element={<ConfirmResetPassword />}/>
+            <Route path='addvet' element={<AddVet/>}/>
           </Route>
         </Routes>
       </AuthProvider>

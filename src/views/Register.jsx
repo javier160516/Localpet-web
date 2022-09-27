@@ -187,6 +187,9 @@ const Register = () => {
             <Link className='hover:text-orange-500  transition-all duration-300 text-xs block text-center mt-4' to="/login">
               ¿Ya tienes cuenta?, Inicia Sesión
             </Link>
+            </div>
+          <div>
+        <Link to="/addvet">Agregar Veterinaria</Link>
           </div>
         </form>
       </div>
