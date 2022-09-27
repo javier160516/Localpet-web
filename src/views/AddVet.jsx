@@ -17,7 +17,6 @@ const AddVet =()=>{
     const [externalNumber, setExtNumber] = useState({value: '', error:''});
     const [internalNumber, setIntNumber] = useState({value: '', error:''});
     const [activityClass, setActClass] = useState({value: '', error: ''});
-    const [typeOfRoadway, setTypeRoad] = useState({value: '', error: ''});
     const [location, setLocation] = useState({value: '', error: ''});
     const [telephone, setTelephone] = useState({value: '', error: ''});
     const [email, setEmail] = useState({value: '', error: ''});
