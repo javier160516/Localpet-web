@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-// import {useForm} from "react-hook-form";
 import Header from '../components/templates/Header';
 import clienteAxios from '../config/axios';
 import useAuth from '../hooks/useAuth';
@@ -25,6 +24,7 @@ const AddVet =()=>{
     const [longitude, setLongitude] = useState({value: '', error: ''});
     const [latitude, setLatitude] = useState({value: '', error: ''});
     const [businessName, setBusinessName] = useState({value:'', error:''});
+    const [clee,setClee] = useState({value:'', error:''});
 
    
     const [selectVet, setSelecVet] = useState(false);
@@ -32,8 +32,36 @@ const AddVet =()=>{
     const { setAuth } = useAuth();
     const navigate = useNavigate();
 
-    // const{register, formState:{errors} , handleSubmit} = useForm();
-    //const onSubmit = data => console.log(data);
+    const [ditto, setDitto] = useState('');
+    const[loaded,setLoaded] = useState(false);
+
+    useEffect( () => {
+        fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+        // .then((res)=>res.json())
+        .then(async(res)=> await console.log(res.json()))
+        .then((pokemon)=>setDitto(pokemon))
+        .catch(err=>console.log(err))
+        .finally(()=>setLoaded(true));
+    },[]);
+
+    // var token = 'fd331851-a905-418b-a8fb-5f29802266f7';
+
+    // var urlApiBusqueda = 'https://www.inegi.org.mx/app/api/denue/v1/consulta/buscar/#nombre/#token';
+
+    // function llamarApi(){
+    //     var nombre = $('name').val();
+
+    //     var urlApiBusquedaTmp = urlApiBusqueda.replace('#nombre', nombre);
+    //     urlApiBusquedaTmp = urlApiBusquedaTmp.replace('#token', token);
+    //      if(nombre.includes('')){
+    //         Swal.fire('¡Error,', 'Seleccione o ingrese el nombre', 'error')
+    //      }else{
+    //         $.getJSON(urlApiBusquedaTmp, function( json ){
+    //             alert('aiuda');
+    //         })
+    //      }
+    // }
+
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -45,32 +73,10 @@ const AddVet =()=>{
         }else{
             console.log(selectVet.value)
         }
-        
-        // try{
-        //     const {data} = await clienteAxios.post('/addvet',{
-        //         name: name,
-        //         postalCode: postalCode
-        //     });
-        //     if(data.status === 200){
-        //         setAuth(data);
-        //         navigate('/');
-        //         window.alert('hola');
-        //     }
-        // } catch(error){
-        //     if(error.response.data.status == 400){
-        //         setName(error.response.data.errors.name);
-        //         setPostalCode(error.response.data.errors.postalCode);
-        //     }else if(error.response.data.status == 404){
-        //         setMsgError(error.response.data.msg);
-        //         setTimeout( () =>{
-        //             setMsgError('');
-        //         }, 3000);
-        //     }
-        // }
 
          try {
-             const {data} = await clienteAxios.post('/veterinary/create', {
-                clee: clee,
+             const { data } = await clienteAxios.post('/veterinary/create', {
+                clee: clee.value,
                 name: name.value,
                 business_name: businessName.value,
                 class_activity: activityClass.value,
@@ -94,9 +100,23 @@ const AddVet =()=>{
                 console.log('jaskdhas');
              }
              
-         } catch (error) {
+         } catch (error) {console.log(error)   
              if(error.response.data.status == 400){
-                 setPostalCode({...postalCode, error: error.response.data.error.postalCode})
+                 setName({...name, error: error.response.data.errors.name});
+                 setBusinessName({...businessName, error: error.response.data.errors.businessName});
+                 setActClass({...activityClass, error: error.response.data.errors.activityClass});
+                 setPostalCode({...postalCode, error: error.response.data.errors.postalCode});
+                 setLocation({...location, error: error.response.data.errors.location});
+                 setColony({...colony, error: error.response.data.errors.colony});
+                 setStreet({...street, error: error.response.data.errors.street});
+                 setExtNumber({...externalNumber, error: error.response.data.errors.externalNumber});
+                 setIntNumber({...internalNumber, error: error.response.data.errors.internalNumber});
+                 setTelephone({...telephone, error: error.response.data.errors.telephone});
+                 setEmail({...email, error: error.response.data.errors.email});
+                 setWebSite({...website, error: error.response.data.errors.website});
+                 setLatitude({...latitude, error: error.response.data.errors.latitude});
+                 setLongitude({...longitude, error: error.response.data.errors.longitude});
+                 setStoreNumber({...storeNumber, error: error.response.data.errors.storeNumber});
              }else if(error.response.data.status == 403){
                 setMsgError(error.response.data.msg);
                 setTimeout(()=>{
@@ -260,13 +280,17 @@ const AddVet =()=>{
                             </div>
 
                             <div className='flex flex-col justify-center items-center'>
-                            <button type='submit' className='focus:outline-none hover:bg-orange-700 transition-all duration-300 bg-orange-500  px-8 py-2 rounded-xl w-5/6 text-white font-bold '>Agregar Veterinaria</button>
+                            <button  type='submit' className='focus:outline-none hover:bg-orange-700 transition-all duration-300 bg-orange-500  px-8 py-2 rounded-xl w-5/6 text-white font-bold '>Agregar Veterinaria</button>
                         </div>
+                        
                     </form>
-                
+                    {/* <div>{loaded ? ditto.name: <h2>Carganding...</h2>}</div>     */}
+                    
+                    
                 </div>
             </div>
-   
+        
+                                    
         </div>
     );
 }
