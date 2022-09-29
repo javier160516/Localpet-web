@@ -8,28 +8,29 @@ const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({});
 
     useEffect(() => {
-        const authenticateUser = async () => {
-            const token = localStorage.getItem('localtoken');
-            if (!token) {
-                setLoading(false);
-                return;
-            }
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
-            }
-            try {
-                const { data } = await clienteAxios('/home', config);
-                setAuth(data);
-            } catch (error) {
-                console.log(error.response);
-            }
-            setLoading(false)
-        }
         authenticateUser();
-    }, [])
+    }, []);
+    
+    const authenticateUser = async () => {
+        const token = localStorage.getItem('localtoken');
+        if (!token) {
+            setLoading(false);
+            return;
+        }
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        }
+        try {
+            const { data } = await clienteAxios('/home', config);
+            setAuth(data);
+        } catch (error) {
+            console.log(error.response);
+        }
+        setLoading(false)
+    }
 
     const signOff = () => {
         localStorage.removeItem('localtoken');

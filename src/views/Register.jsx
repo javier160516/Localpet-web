@@ -7,20 +7,40 @@ import Loader from '../helpers/Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
+/** FRONTEND **/
+// Función principal de la vista "Registro"
 const Register = () => {
-  const [loading, setLoading] = useState(false);
+  /** DATOS DE ENTRADA **/
+  // Se crean los states de de cada campo a enviar hacia el backend
+  // Estado que contiene variable y funcion que contienen un valor y error del nombre
   const [name, setName] = useState({ value: '', error: '' });
+    // Estado que contiene variable y funcion que contienen un valor y error del apellido
   const [lastName, setLastName] = useState({ value: '', error: '' });
+    // Estado que contiene variable y funcion que contienen un valor y error del email
   const [email, setEmail] = useState({ value: '', error: '' });
+    // Estado que contiene variable y funcion que contienen un valor y error de la contraseña
   const [password, setPassword] = useState({ value: '', error: '' });
+    // Estado que contiene variable y funcion que contienen un valor y error del repetir contraseña
   const [confirmPassword, setConfirmPassword] = useState({ value: '', error: '' });
+
+  /** Estados para hacer interacción con el usuario **/
+  //cuando se envia el formulario este estado hace que un loader se active para que el 
+  //usuario sepa que se está procesando la información
+  const [loading, setLoading] = useState(false);
+  //Estado donde si se le da click a un icono que está en la vista se puede visualizar la contraseña
   const [showPassword, setShowPassword] = useState(false);
+  //Estado donde si se le da click a un icono que está en la vista se puede visualizar la contraseña confirmada
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  // Al enviar el formulario se ejecuta esta funcion asincrona
   const handleSubmit = async () => {
+    // Se evita que la página se recargue
     event.preventDefault();
+    // Se cambia el estado del loader
     setLoading(true);
     try {
+      // Se hace una petición post para mandar los datos introducidos 
+      // y asi el backend los recibe
       const response = await clienteAxios.post('/register', {
         name: name.value,
         last_name: lastName.value,
@@ -29,27 +49,40 @@ const Register = () => {
         confirm_password: confirmPassword.value
       });
       setLoading(false);
+      // Si la petición sale correcta (201) se muestra una alerta de que todo salió correctamente 
       if (response.data.status == 201) {
+        // Notificación en forma de modal donde se le pasan los parámetros de titulo, un texto extra y el icono
         Swal.fire({
           title: response.data.msg,
           text: 'Hemos enviado un email con las instrucciones',
           icon: 'success',
           confirmButtonText: 'Ok',
         }).then((result) => {
+          //Cuando se le dá "OK" a la notificación, el formulario se vacia
           if (result.isConfirmed) {
             voidFomr()
           }
         })
       }
     } catch (error) {
+      // Si hay algún error se válida que tipo de error es
+      // dependiendo del tipo de error es la acción que se hará
       setLoading(false);
       if (error.response.status == 400) {
+        // Si el nombre está vacio la el backend manda un mensaje y se le pone a la vista del usuario
         setName({ ...name, error: error.response.data.errors.name });
+        // Si el apellido está vacio la el backend manda un mensaje y se le pone a la vista del usuario
         setLastName({ ...lastName, error: error.response.data.errors.last_name });
+        // Si el email está vacio la el backend manda un mensaje y se le pone a la vista del usuario
         setEmail({ ...email, error: error.response.data.errors.email });
+        // Si la contraseña está vacia la el backend manda un mensaje y se le pone a la vista del usuario
         setPassword({ ...password, error: error.response.data.errors.password });
+        // Si la confirmación de la contraseña está vacio la el backend manda un mensaje y se le 
+        // pone a la vista del usuario
         setConfirmPassword({ ...confirmPassword, error: error.response.data.errors.confirm_password });
+        // Si el error que arroja el backend es 403 (Forbidden) 
       } else if (error.response.data.status == 403) {
+        // Se manda una notificación diciendo que el usuario ya está registrado
         Swal.fire('¡Error!', error.response.data.msg, 'error');
       }
     }
@@ -184,7 +217,7 @@ const Register = () => {
             <button type='submit' className='hover:bg-orange-700 transition-all duration-300 bg-orange-500 px-8 py-1 rounded-xl text-white font-bold '>Registrar</button>
           </div>
           <div className='mt-2'>
-            <Link className='hover:text-orange-500  transition-all duration-300 text-xs block text-center mt-4' to="/login">
+            <Link className='hover:text-orange-500  transition-all duration-300 text-xs block text-center mt-4' to="/iniciar-sesion">
               ¿Ya tienes cuenta?, Inicia Sesión
             </Link>
           </div>

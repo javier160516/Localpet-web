@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 import inciosesion from '../assets/iniciarsesion.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -17,13 +17,10 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('');
   const [messageError, setMessageError] = useState('');
 
+  const [token, setToken] = useState('');
   const navigate = useNavigate();
-
   useEffect(() => {
-    const token = localStorage.getItem('localtoken');
-    if (token) {
-      return navigate('/');
-    }
+    setToken(localStorage.getItem('localtoken'));
   }, [])
 
   const handleSubmit = async (e) => {
@@ -62,6 +59,8 @@ const Login = () => {
 
   return (
     <div className='h-screen py-5 bg-slate-300 flex justify-center items-center'>
+      {!token ? (
+        
       <div className='w-11/12 sm:w-8/12 md:w-7/12 lg:w-4/12 bg-white shadow border rounded-xl px-10 py-5' >
         <div className='flex justify-center'>
           <img src={inciosesion} alt="Logo localpet" width={100} loading="lazy" />
@@ -111,7 +110,7 @@ const Login = () => {
             <button type='submit' className='hover:bg-orange-700 transition-all duration-300 bg-orange-500 px-8 py-1 rounded-xl text-white font-bold'>Iniciar Sesión</button>
           </div>
           <div className='flex flex-col items-center mt-4'>
-            <Link className='hover:text-orange-500 transition-all duration-300 text-xs text-center mt-2 mb-2' to="/register">
+            <Link className='hover:text-orange-500 transition-all duration-300 text-xs text-center mt-2 mb-2' to="/registrarse">
               ¿No tienes cuenta?, Registrate
             </Link>
             <Link className='hover:text-orange-500 transition-all duration-300 text-xs text-center mt-2 mb-2' to="/forgot-password">
@@ -120,6 +119,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      ): <Navigate to='/'/>}
     </div>
   )
 }

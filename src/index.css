@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: KAVOON;
+    src: url("../src/assets/fonts/Kavoon-Regular.ttf");
+}
+
+@font-face {
+    font-family: Akayakanadaka-Regular;
+    src: url("../src/assets/fonts/AkayaKanadaka-Regular.ttf");
+}
+
+.dropdown:hover .dropdown-menu {
+    animation: dropdownMenu 300ms;
+    display: block;
+}
