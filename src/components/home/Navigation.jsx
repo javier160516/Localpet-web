@@ -80,7 +80,12 @@ const Navigation = () => {
                 </Link>
               </li>
               {Object.keys(auth).length > 0 ? (
-                <div className="">
+                <div className="flex gap-4">
+                  <li className="flex">
+                      <Link to="/buscar-veterinaria" className="hover:text-orange-500 font-medium transition-all duration-200 text-center">
+                        Registrar Veterinaria
+                      </Link>
+                    </li>
                   <div className="dropdown inline-block relative">
                     <button className="transition-all duration-200 hover:text-orange-500 mx-3 rounded-full md:ml-0 md:mr-0 inline-flex items-center">
                       <div>
@@ -137,13 +142,18 @@ const Navigation = () => {
             </Link>
             <ul className='pt-5'>
               <li className='text-white hover:bg-white hover:cursor-pointer transition-all duration-200'>
-                <Link to={'/'} className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Inicio</Link>
+                <Link to='/' className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Inicio</Link>
               </li>
               <li className='text-white hover:bg-white hover:cursor-pointer transition-all duration-200'>
-                <Link to={'/'} className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Encontar veterinaria</Link>
+                <Link to='buscar-veterinaria' className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Buscar veterinaria</Link>
               </li>
+              {Object.keys(auth).length > 0 && (
+                <li className='text-white hover:bg-white hover:cursor-pointer transition-all duration-200'>
+                <Link to='registrar-veterinaria' className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Registrar Veterinaria</Link>
+              </li>
+              )}
               <li className='text-white hover:bg-white hover:cursor-pointer transition-all duration-200'>
-                <Link to={'/'} className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">About Us</Link>
+                <Link to='sobre-nosotros' className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Sobre Nosotros</Link>
               </li>
               {Object.keys(auth).length > 0 ? (
                 <div>
