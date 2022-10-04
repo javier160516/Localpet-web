@@ -27,7 +27,9 @@ const AuthProvider = ({ children }) => {
             const { data } = await clienteAxios('/home', config);
             setAuth(data);
         } catch (error) {
-            console.log(error.response);
+            if(error.response.status == 400){
+                localStorage.removeItem('localtoken');
+            }
         }
         setLoading(false)
     }

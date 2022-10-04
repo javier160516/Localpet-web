@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/localpet-favicon.svg";
 import letras from "../../assets/localpet-letras.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faRightFromBracket, faXmark, faGear, faShop } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hooks/useAuth';
-import Avatar from 'react-avatar';
 import clienteAxios from "../../config/axios";
 
 const Navigation = () => {
@@ -14,6 +12,7 @@ const Navigation = () => {
   const { signOff } = useAuth();
   const [styles, setStyles] = useState('fixed left-[-150%]');
   const [auth, setAuth] = useState({});
+  const [location, setLocation] = useState(window.location);
 
   useEffect(() => {
     const obtenerDatos = async () => {
@@ -27,14 +26,13 @@ const Navigation = () => {
             }
           }
           const response = await clienteAxios.get('/home', config);
-          if(response.data.status == 200){
+          if (response.data.status == 200) {
             setAuth(response.data.user);
           }
-          console.log(response);
         } catch (error) {
           console.log(error);
         }
-      }else{
+      } else {
         setAuth({});
       }
     }
@@ -43,9 +41,9 @@ const Navigation = () => {
 
   const handleNav = () => {
     setNav(!nav)
-    if(nav){
+    if (nav) {
       setStyles('uppercase fixed left-0 top-0 w-[50%] h-full bg-orange-500 ease-in-out duration-500 md:hidden z-50');
-    }else{
+    } else {
       setStyles('fixed left-[-150%]')
     }
   }
@@ -59,7 +57,7 @@ const Navigation = () => {
     <div className="flex justify-between bg-[#E5E9F2] ">
       <Link to="/" className="ml-6">
         <div className="flex items-center py-2">
-          <img src={logo} alt="logo-locatpet" width={80}/>
+          <img src={logo} alt="logo-locatpet" width={80} />
           <p className="font-AkayaKanadaka ml-4 text-2xl text-orange-500 font-bold tracking-wider">Localpet</p>
         </div>
       </Link>
@@ -72,7 +70,7 @@ const Navigation = () => {
           <div>
             <ul className="hidden md:flex gap-5 items-center uppercase">
               <li className="flex">
-                <Link to="/" className="hover:text-orange-400 font-medium transition-all duration-200 text-center">
+                <Link to="/buscar-veterinaria" className="hover:text-orange-400 font-medium transition-all duration-200 text-center">
                   Buscar veterinaria
                 </Link>
               </li>
@@ -90,13 +88,23 @@ const Navigation = () => {
                       </div>
                       <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
                     </button>
-                    <ul className="dropdown-menu absolute hidden shadow-lg bg-orange-500 rounded-md w-full">
-                      <li className=""><a className="transition-all duration-300 rounded-t-md hover:bg-orange-400 text-white py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
-                      <li className=""><a className="transition-all duration-300 rounded-t hover:bg-orange-400 text-white py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
+                    <ul className="dropdown-menu absolute hidden shadow-lg bg-orange-500 rounded-md w-44 capitalize right-0">
                       <li className="">
-                        <button className="w-full transition-all duration-300 rounded-b-md hover:bg-orange-400 text-white py-2 px-4 block whitespace-no-wrap" type="button" onClick={() => closeSesion()}>
+                        <NavLink to='panel/mis-veterinarias' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 text-white py-2 px-4 block whitespace-no-wrap'>
+                          Mis Veterinarias
+                          <FontAwesomeIcon icon={faShop} className='ml-2' />
+                        </NavLink>
+                      </li>
+                      <li className="">
+                        <NavLink className="transition-all duration-300 rounded-t-md hover:bg-orange-400 text-white py-2 px-4 block whitespace-no-wrap" to='/panel'>
+                          Ajustes
+                          <FontAwesomeIcon icon={faGear} className='ml-2' />
+                        </NavLink>
+                      </li>
+                      <li className="">
+                        <button className="w-full text-left transition-all duration-300 rounded-t-md hover:bg-orange-400 text-white py-2 px-4 block whitespace-no-wrap" type="button" onClick={() => closeSesion()}>
                           Cerrar Sesión
-                        <FontAwesomeIcon icon={faRightFromBracket} className='ml-2' />
+                          <FontAwesomeIcon icon={faRightFromBracket} className='ml-2' />
                         </button>
                       </li>
                     </ul>
@@ -143,7 +151,7 @@ const Navigation = () => {
                     <button className="uppercase hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2" onClick={() => closeSesion()}>Cerrar Sesión</button>
                   </li>
                 </div>
-              ): (
+              ) : (
                 <div>
                   <li className='text-white hover:bg-white hover:cursor-pointer transition-all duration-200'>
                     <Link to={'/iniciar-sesion'} className="hover:text-orange-600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Iniciar Sesión</Link>
