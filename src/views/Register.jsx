@@ -183,11 +183,7 @@ const Register = () => {
           <div className='flex justify-center mt-8'>
             <button type='submit' className='hover:bg-orange-700 transition-all duration-300 bg-orange-500 px-8 py-1 rounded-xl text-white font-bold '>Registrar</button>
           </div>
-          <div className='mt-2'>
-            <Link className='hover:text-orange-500  transition-all duration-300 text-xs block text-center mt-4' to="/login">
-              ¿Ya tienes cuenta?, Inicia Sesión
-            </Link>
-            </div>
+         
           <div>
           <Link className='hover:text-blue-600  transition-all duration-300 text-xs block text-center mt-4' to="/login">
             ¿Ya tienes cuenta?, Inicia Sesión    
