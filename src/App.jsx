@@ -9,7 +9,7 @@ import ForgotPassword from './views/ForgotPassword';
 import ConfirmResetPassword from './views/ConfirmResetPassword';
 import { AuthProvider } from './context/AuthProvider';
 import AboutUs from './views/AboutUs';
-import AdminVeterinary from './views/adminVeterinary';
+import AdminVeterinary from './views/AdminVeterinary';
 import RouteProtected from './layout/RouteProtected';
 import Veterinaries from './views/admin/Veterinaries';
 import Roles from './views/admin/Roles';

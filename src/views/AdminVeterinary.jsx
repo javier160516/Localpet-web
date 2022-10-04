@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonDigging } from '@fortawesome/free-solid-svg-icons';
 
-
 const AdminVeterinary = () => {
   document.title = 'Localpet | Inicio'
   return (
