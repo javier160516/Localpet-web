@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Header from '../components/templates/Header';
-import Footer from '../components/templates/footer';
+import Footer from '../components/templates/Footer';
 import First from "../components/home/First";
 import Second from "../components/home/Second";
 import Third from "../components/home/Third";
