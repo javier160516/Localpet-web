@@ -8,7 +8,7 @@ import ConfirmAccount from './views/ConfirmAccount';
 import ForgotPassword from './views/ForgotPassword';
 import ConfirmResetPassword from './views/ConfirmResetPassword';
 import { AuthProvider } from './context/AuthProvider';
-import AddVet from './views/AddVet';
+
 function App() {
   return (
     <BrowserRouter>
