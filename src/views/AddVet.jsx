@@ -270,6 +270,7 @@ const AddVet =()=>{
                             <div className='flex flex-col justify-center'>
                                 <label className='font-bold block ml-2 mb-1 text-sm'>Calle</label>
                                 <input
+                                    // id='calle'
                                     disabled
                                     placeholder='Calle 1' 
                                     type="text" 
