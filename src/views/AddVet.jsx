@@ -348,7 +348,7 @@ const AddVet =()=>{
                     </form>                    
                 </div>
             </div>
-        
+                                
             <Footer/>      
             </div>                      
         </div>
