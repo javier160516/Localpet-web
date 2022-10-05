@@ -61,7 +61,7 @@ const AddVet =()=>{
                 
             }
         }catch(error){
-            // console.log(error);
+           
         }
     }
     
