@@ -8,6 +8,13 @@ import ConfirmAccount from './views/ConfirmAccount';
 import ForgotPassword from './views/ForgotPassword';
 import ConfirmResetPassword from './views/ConfirmResetPassword';
 import { AuthProvider } from './context/AuthProvider';
+import AboutUs from './views/AboutUs';
+import AdminVeterinary from './views/AdminVeterinary';
+import RouteProtected from './layout/RouteProtected';
+import Veterinaries from './views/admin/Veterinaries';
+import Roles from './views/admin/Roles';
+import VeterinaryDetail from './views/admin/VeterinaryDetail';
+import SearchVeterinary from './views/SearchVeterinary';
 
 function App() {
   return (
@@ -17,12 +24,22 @@ function App() {
           {/* Rutas publicas */}
           <Route path='/' element={<AuthLayout />} >
             <Route index element={<Home />} />
-            <Route path='login' element={<Login />} />
-            <Route path='register' element={<Register />} />
+            <Route path='buscar-veterinaria' element={<SearchVeterinary />} />
+            <Route path='sobre-nosotros' element={<AboutUs />} />
+            <Route path='iniciar-sesion' element={<Login />} />
+            <Route path='registrarse' element={<Register />} />
             <Route path='confirm/:token' element={<ConfirmAccount />}/>
             <Route path='forgot-password' element={<ForgotPassword />} />
             <Route path='forgot-password/:token' element={<ConfirmResetPassword />}/>
             <Route path='addvet' element={<AddVet/>}/>
+          </Route>
+          {/* Rutas Privadas */}
+          <Route path='/panel' element={<RouteProtected />}>
+            <Route index element={<AdminVeterinary />}/>
+            <Route path='mis-veterinarias' element={<Veterinaries />}/>
+            <Route path='mis-veterinarias/:id' element={<VeterinaryDetail />}/>
+            <Route path='mis-veterinarias/:id/edit' element={<VeterinaryDetail />}/>
+            <Route path='roles' element={<Roles />}/>
           </Route>
         </Routes>
       </AuthProvider>

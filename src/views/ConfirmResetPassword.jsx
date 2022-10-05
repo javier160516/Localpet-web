@@ -67,7 +67,7 @@ const ConfirmResetPassword = () => {
           cancelButtonText: 'Ok'
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate('/login')
+            navigate('/iniciar-sesion')
           }
         })
       }
@@ -84,7 +84,7 @@ const ConfirmResetPassword = () => {
           confirmButtonText: 'Ok',
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate('/login')
+            navigate('/iniciar-sesion')
           }
         })
       }
