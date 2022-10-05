@@ -15,6 +15,7 @@ import Veterinaries from './views/admin/Veterinaries';
 import Roles from './views/admin/Roles';
 import VeterinaryDetail from './views/admin/VeterinaryDetail';
 import SearchVeterinary from './views/SearchVeterinary';
+
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +31,7 @@ function App() {
             <Route path='confirm/:token' element={<ConfirmAccount />}/>
             <Route path='forgot-password' element={<ForgotPassword />} />
             <Route path='forgot-password/:token' element={<ConfirmResetPassword />}/>
+            <Route path='addvet' element={<AddVet/>}/>
           </Route>
           {/* Rutas Privadas */}
           <Route path='/panel' element={<RouteProtected />}>
