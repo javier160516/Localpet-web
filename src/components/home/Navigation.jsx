@@ -9,34 +9,33 @@ import clienteAxios from "../../config/axios";
 
 const Navigation = () => {
   const [nav, setNav] = useState(true)
-  const { signOff } = useAuth();
+  const { signOff, auth, setAuth } = useAuth();
   const [styles, setStyles] = useState('fixed left-[-150%]');
-  const [auth, setAuth] = useState({});
   const [location, setLocation] = useState(window.location);
 
   useEffect(() => {
-    const obtenerDatos = async () => {
-      const token = localStorage.getItem('localtoken');
-      if (token !== null) {
-        try {
-          const config = {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`
-            }
-          }
-          const response = await clienteAxios.get('/home', config);
-          if (response.data.status == 200) {
-            setAuth(response.data.user);
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      } else {
-        setAuth({});
-      }
-    }
-    obtenerDatos();
+    // const obtenerDatos = async () => {
+    //   const token = localStorage.getItem('localtoken');
+    //   if (token !== null) {
+    //     try {
+    //       const config = {
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           Authorization: `Bearer ${token}`
+    //         }
+    //       }
+    //       const response = await clienteAxios.get('/home', config);
+    //       if (response.data.status == 200) {
+    //         setAuth(response.data.user);
+    //       }
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   } else {
+    //     setAuth({});
+    //   }
+    // }
+    // obtenerDatos();
   }, []);
 
   const handleNav = () => {
@@ -79,10 +78,10 @@ const Navigation = () => {
                   Sobre Nosotros
                 </Link>
               </li>
-              {Object.keys(auth).length > 0 ? (
+              {auth.user?.id ? (
                 <div className="flex gap-4">
                   <li className="flex">
-                      <Link to="/buscar-veterinaria" className="hover:text-orange-500 font-medium transition-all duration-200 text-center">
+                      <Link to="/registrar-veterinaria" className="hover:text-orange-500 font-medium transition-all duration-200 text-center">
                         Registrar Veterinaria
                       </Link>
                     </li>
@@ -93,7 +92,7 @@ const Navigation = () => {
                       </div>
                       <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
                     </button>
-                    <ul className="dropdown-menu absolute hidden shadow-lg bg-orange-500 rounded-md w-44 capitalize right-0">
+                    <ul className="dropdown-menu absolute hidden shadow-lg bg-orange-500 rounded-md w-44 capitalize right-0 z-[9999]">
                       <li className="">
                         <NavLink to='panel/mis-veterinarias' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 text-white py-2 px-4 block whitespace-no-wrap'>
                           Mis Veterinarias
@@ -124,7 +123,7 @@ const Navigation = () => {
                     </Link>
                   </li>
                   <li className="bg-orange-400 shadow-inner rounded-lg p-2 hover:bg-orange-500 transition-all duration-300">
-                    <Link to="/registarse" className="text-white">
+                    <Link to="/registrarse" className="text-white">
                       Registrate
                     </Link>
                   </li>

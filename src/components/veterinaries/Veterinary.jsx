@@ -4,24 +4,25 @@ import imgVet from '../../assets/imagen-veterinaria.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faTrash, faEye } from '@fortawesome/free-solid-svg-icons';
 
-const Veterinary = ({deleteVeterinary}) => {
-
+const Veterinary = ({vet, deleteVeterinary}) => {
+  console.log(vet);
+  const { id, name, class_activity, colony, code_postal, email, phone_number, imgUrl } = vet
   return (
     <div className='w-9/12 flex items-center justify-center flex-col md:flex-row gap-4 mx-auto p-3 my-5 rounded-md shadow-md bg-white '>
             <div className='w-2/3 sm:w-5/12 md:w-6/12 lg:w-4/12 xl:w-3/12 mx-auto mt-2 md:mt-0 '>
-              <img src={imgVet} alt="nombre de la veterinaria"/>
+              <img src={imgUrl} alt="nombre de la veterinaria"/>
             </div>
             <div className='w-11/12 mx-auto mt-3 md:mt-0 flex-1'>
               <div>
-                <h2 className='font-bold text-lg text-center md:text-left'>CANCUN DOGH GROOMING VETERINARIA</h2>
-                <p className='text-sm'>Servicios veterinarios para mascotas prestados por el sector privado</p>
+                <h2 className='font-bold text-lg text-center md:text-left'>{name}</h2>
+                <p className='text-sm'>{class_activity}</p>
               </div>
               <div className='mt-4 lg:pr-4 flex flex-col lg:flex-row lg:justify-between lg:items-center'>
                 <div>
-                  <p><span className='font-semibold'>Colonia:</span> SANTA FÉ</p>
-                  <p><span className='font-semibold'>CP:</span> 77534</p>
-                  <p><span className='font-semibold'>Email:</span> veterinaria@correo.com</p>
-                  <p><span className='font-semibold'>Teléfono: </span> 9984320101</p>
+                  <p><span className='font-semibold'>Colonia:</span> {colony}</p>
+                  <p><span className='font-semibold'>CP:</span> {code_postal}</p>
+                  <p><span className='font-semibold'>Email:</span> {email}</p>
+                  <p><span className='font-semibold'>Teléfono: </span> {phone_number}</p>
                 </div>
                 <div className='mt-4 lg:mt-0 flex lg:flex-col justify-evenly'>
                 <Link to='2'  className='flex flex-col lg:flex-row items-center justify-center bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded-lg transition-all duration-300 lg:mb-2'>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import logo from '../../assets/localpet.png';
+import logo from '../../assets/logo-panel.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faHome, faUsers, faHouseMedical } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hooks/useAuth';

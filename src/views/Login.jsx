@@ -33,7 +33,7 @@ const Login = () => {
           password: password
         });
       if (data.status == 200) {
-        localStorage.setItem('localtoken', data.token);
+        localStorage.setItem('localtoken', data.user.token);
         setAuth(data)
         navigate('/');
         setLoading(false);
