@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, HashRouter } from 'react-router-dom';
 import AuthLayout from './layout/AuthLayout';
 import Login from './views/Login';
 import Home from './views/Home';
@@ -21,7 +21,7 @@ import VeterinaryComments from './views/admin/VeterinaryComments';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <Routes>
           {/* Rutas publicas */}
@@ -47,7 +47,7 @@ function App() {
           </Route>
         </Routes>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
