@@ -74,11 +74,7 @@ const AddVet =()=>{
             const response = await clienteAxios.get("https://www.inegi.org.mx/app/api/denue/v1/consulta/BuscarEntidad/Veterinaria/23/1/1000/dcd3720b-ed53-44d8-9630-da796b73fe3f"); 
 
             if(response.status == 200){ 
-                
-                // setAuth(data);
-                // navigate('/')
                 setVeterinaries([response.data])
-                
             }
         }catch(error){
            
@@ -103,7 +99,7 @@ const AddVet =()=>{
             
     const handleSubmit = async (e) =>{
         e.preventDefault();
-
+        console.log(selectVet);
         const token = localStorage.getItem('localtoken');
         if (!token) {
           setLoading(false);
@@ -129,7 +125,7 @@ const AddVet =()=>{
                 //  }
                  const { data } = await clienteAxios.post('/veterinary/create', {
                     clee: clee.value,
-                    selectVet: selectVet.value,
+                    selectVet: selectVet,
                     name: name.value,
                     business_name: businessName.value,
                     class_activity: activityClass.value,

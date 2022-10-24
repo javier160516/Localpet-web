@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Header from '../components/templates/Header';
 import Footer from '../components/templates/Footer';
 import First from "../components/home/First";
@@ -19,11 +19,17 @@ const Home = () => {
       <AnimationOnScroll initiallyVisible={false} animateIn="animate__slideInLeft" duration={1} className='mt-10'>
         <Second />
       </AnimationOnScroll>
+      <ins class="adsbygoogle"
+        style={{display: 'block'}}
+        data-ad-client="ca-pub-5930574640955118"
+        data-ad-slot="3925688283"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
       <AnimationOnScroll initiallyVisible={false} animateIn="animate__fadeInRight" duration={1}>
         <Third />
       </AnimationOnScroll>
-        <Fourth />
-        <Footer />
+      <Fourth />
+      <Footer />
     </div>
   )
 }

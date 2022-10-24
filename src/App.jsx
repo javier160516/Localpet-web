@@ -16,6 +16,8 @@ import Roles from './views/admin/Roles';
 import VeterinaryDetail from './views/admin/VeterinaryDetail';
 import SearchVeterinary from './views/SearchVeterinary';
 import AddVet from './views/AddVet';
+import NewVeterinary from './views/NewVeterinary';
+import VeterinaryComments from './views/admin/VeterinaryComments';
 
 function App() {
   return (
@@ -32,14 +34,15 @@ function App() {
             <Route path='confirm/:token' element={<ConfirmAccount />}/>
             <Route path='forgot-password' element={<ForgotPassword />} />
             <Route path='forgot-password/:token' element={<ConfirmResetPassword />}/>
-            <Route path='registrar-veterinaria' element={<AddVet/>}/>
+            <Route path='registrar-veterinaria' element={<NewVeterinary/>}/>
           </Route>
           {/* Rutas Privadas */}
           <Route path='/panel' element={<RouteProtected />}>
             <Route index element={<AdminVeterinary />}/>
             <Route path='mis-veterinarias' element={<Veterinaries />}/>
             <Route path='mis-veterinarias/:id' element={<VeterinaryDetail />}/>
-            <Route path='mis-veterinarias/:id/edit' element={<VeterinaryDetail />}/>
+            <Route path='mis-veterinarias/edit/:id' element={<VeterinaryDetail />}/>
+            <Route path='mis-veterinarias/comentarios' element={<VeterinaryComments />}/>
             <Route path='roles' element={<Roles />}/>
           </Route>
         </Routes>

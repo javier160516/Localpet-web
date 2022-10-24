@@ -11,33 +11,8 @@ const Navigation = () => {
   const [nav, setNav] = useState(true)
   const { signOff, auth, setAuth } = useAuth();
   const [styles, setStyles] = useState('fixed left-[-150%]');
-  const [location, setLocation] = useState(window.location);
 
-  useEffect(() => {
-    // const obtenerDatos = async () => {
-    //   const token = localStorage.getItem('localtoken');
-    //   if (token !== null) {
-    //     try {
-    //       const config = {
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //           Authorization: `Bearer ${token}`
-    //         }
-    //       }
-    //       const response = await clienteAxios.get('/home', config);
-    //       if (response.data.status == 200) {
-    //         setAuth(response.data.user);
-    //       }
-    //     } catch (error) {
-    //       console.log(error);
-    //     }
-    //   } else {
-    //     setAuth({});
-    //   }
-    // }
-    // obtenerDatos();
-  }, []);
-
+  console.log(auth);
   const handleNav = () => {
     setNav(!nav)
     if (nav) {
@@ -48,8 +23,8 @@ const Navigation = () => {
   }
 
   const closeSesion = () => {
-    signOff();
     setAuth({})
+    signOff();
   }
 
   return (
@@ -78,7 +53,7 @@ const Navigation = () => {
                   Sobre Nosotros
                 </Link>
               </li>
-              {auth.user?.id ? (
+              {auth?.user?.id ? (
                 <div className="flex gap-4">
                   <li className="flex">
                       <Link to="/registrar-veterinaria" className="hover:text-orange-500 font-medium transition-all duration-200 text-center">
@@ -88,7 +63,7 @@ const Navigation = () => {
                   <div className="dropdown inline-block relative">
                     <button className="transition-all duration-200 hover:text-orange-500 mx-3 rounded-full md:ml-0 md:mr-0 inline-flex items-center">
                       <div>
-                        <span className="ml-2 font-semibold uppercase">Javier Delgado</span>
+                        <span className="ml-2 font-semibold uppercase">{auth.user.name} {auth.user.last_name}</span>
                       </div>
                       <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
                     </button>

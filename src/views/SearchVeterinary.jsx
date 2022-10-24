@@ -38,7 +38,7 @@ const SearchVeterinary = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
             {countPosition ? (
-                <Marker position={position}>
+                <Marker position={position} >
                   <Popup>
                     este es un popover
                   </Popup>

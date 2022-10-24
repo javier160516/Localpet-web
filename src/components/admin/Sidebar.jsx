@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo-panel.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket, faHome, faUsers, faHouseMedical } from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket, faHome, faUsers, faHouseMedical, faComment } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hooks/useAuth';
 
 const Sidebar = ({ showSidebar, styles, setStyles }) => {
@@ -40,6 +40,14 @@ const Sidebar = ({ showSidebar, styles, setStyles }) => {
               className='block w-full py-3 px-3 hover:font-bold hover:pl-5 hover:bg-slate-100 hover:text-orange-500 transition-all duration-300'>
               <FontAwesomeIcon icon={faHouseMedical} className='mr-2' />
               Mis veterinarias
+            </Link>
+          </div>
+          <div className='text-white transition-all duration-200'>
+            <Link
+              to={'mis-veterinarias/comentarios'}
+              className='block w-full py-3 px-3 hover:font-bold hover:pl-5 hover:bg-slate-100 hover:text-orange-500 transition-all duration-300'>
+              <FontAwesomeIcon icon={faComment} className='mr-2' />
+              Comentarios
             </Link>
           </div>
           <div className='text-white transition-all duration-200'>

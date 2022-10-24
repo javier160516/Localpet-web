@@ -2,8 +2,8 @@ import React, {useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
-const NavSuperior = ({ showSidebar, setShowSidebar, styles, setStyles }) => {
-
+const NavSuperior = ({ showSidebar, setShowSidebar, styles, setStyles, auth }) => {
+    const { name, last_name } = auth.user;
     const hideSidebar = () => {
         setShowSidebar(!showSidebar)
         if (showSidebar) {
@@ -30,7 +30,7 @@ const NavSuperior = ({ showSidebar, setShowSidebar, styles, setStyles }) => {
             <div className='flex items-center'>
                 <div className='bg-orange-500 rounded-full w-9 h-9 bg-[url("./assets/prueba-face.jpg")] bg-cover bg-center hover:cursor-pointer'>
                 </div>
-                <p className='ml-3'>Javier Delgado</p>
+                <p className='ml-3'>{name} {last_name}</p>
             </div>
         </div>
     )

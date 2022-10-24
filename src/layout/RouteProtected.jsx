@@ -8,7 +8,6 @@ const RouteProtected = () => {
   const [showSidebar, setShowSidebar] = useState(true);
   const [styles, setStyles] = useState('left-0 top-0 w-0 hidden md:inline-block md:w-1/3 lg:w-1/5 xl:w-1/4 h-full bg-orange-500 ease-in-out duration-500');
   const { auth, setAuth, loading } = useAuth();
-
   if (loading) return 'Cargando...';
   return (
     <>
@@ -26,6 +25,7 @@ const RouteProtected = () => {
               setShowSidebar={setShowSidebar}
               styles={styles}
               setStyles={setStyles}
+              auth={auth}
             />
             <main className='h-full pb-16'>
               <Outlet />
