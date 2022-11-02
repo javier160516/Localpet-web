@@ -57,6 +57,7 @@ const Register = () => {
           text: 'Hemos enviado un email con las instrucciones',
           icon: 'success',
           confirmButtonText: 'Ok',
+          confirmButtonColor: '#EA580C',
         }).then((result) => {
           //Cuando se le dá "OK" a la notificación, el formulario se vacia
           if (result.isConfirmed) {

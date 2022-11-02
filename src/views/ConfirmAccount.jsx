@@ -6,7 +6,8 @@ import clienteAxios from '../config/axios';
 import Loader from '../helpers/Loader';
 
 const ConfirmAccount = () => {
-    const [token, setToken] = useState(window.location.pathname.split('/')[2]);
+    const path = window.location.href.split('/');
+    const [token, setToken] = useState(path[path.length - 1]);
     const [message, setMessage] = useState('');
     const [icon, setIcon] = useState('');
     const [viewStatus, setViewStatus] = useState(false);
@@ -50,7 +51,7 @@ const ConfirmAccount = () => {
                             <h1 className='text-xl font-bold text-center mb-6'>{message ? message : null}</h1>
                         </div>
                         <div className='mx-5 mb-4'>
-                            <button type='button' className='text-sm border rounded-md px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white transition-all duration-300 font-semibold' onClick={() => navigate('/login')}>Ir a iniciar Sesión...</button>
+                            <button type='button' className='text-sm border rounded-md px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white transition-all duration-300 font-semibold' onClick={() => navigate('/iniciar-sesion')}>Ir a iniciar Sesión...</button>
                         </div>
 
                     </div>

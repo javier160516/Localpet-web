@@ -19,7 +19,7 @@ const Home = () => {
       <AnimationOnScroll initiallyVisible={false} animateIn="animate__slideInLeft" duration={1} className='mt-10'>
         <Second />
       </AnimationOnScroll>
-      <ins class="adsbygoogle"
+      <ins className="adsbygoogle"
         style={{display: 'block'}}
         data-ad-client="ca-pub-5930574640955118"
         data-ad-slot="3925688283"
