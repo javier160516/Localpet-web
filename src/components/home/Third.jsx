@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { NavLink } from 'react-router-dom';
 import veterinario from "../../assets/veterinario.png";
 
 const Third = () => {
@@ -13,7 +14,7 @@ const Third = () => {
                 <p className='w-full text-1xl text-justify '>Si necesitas potenciar tu clínica veterinaria, somos la mejor opción, pon tu clinica al alcance de todos con nuestro sistema y <strong>agrega la información necesaria para que los clientes te encuentren de manera sencilla</strong> </p>
                 <div className='w-full flex justify-end my-3'>
                     {/* <button className='text-center mt-4 text-lg bg-orange-400 text-white py-2 px-6 hover:bg-orange-500 transition-all duration-200 rounded-md'>Más sobre LocalPet </button> */}
-                    <button className='text-center mt-4 text-lg border-orange-500 border-2 text-orange-500 py-1 px-6 hover:bg-orange-500 hover:text-white transition-all duration-400 rounded-xl'>Más sobre LocalPet </button>
+                    <NavLink to={'sobre-nosotros'} className='text-center mt-4 text-lg border-orange-500 border-2 text-orange-500 py-1 px-6 hover:bg-orange-500 hover:text-white transition-all duration-400 rounded-xl'>Más sobre LocalPet </NavLink>
                 </div>
             </div>           
         </div>

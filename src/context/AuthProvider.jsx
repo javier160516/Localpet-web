@@ -13,6 +13,7 @@ const AuthProvider = ({ children }) => {
     
     const authenticateUser = async () => {
         const token = localStorage.getItem('localtoken');
+        console.log(auth);
         if (!token) {
             setLoading(false);
             return;

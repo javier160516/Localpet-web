@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const CommentsCard = ({vet}) => {
-  console.log(vet);
 
   const { id, name, class_activity, imgUrl } = vet;
 

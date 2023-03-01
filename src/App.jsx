@@ -15,9 +15,9 @@ import Veterinaries from './views/admin/Veterinaries';
 import Roles from './views/admin/Roles';
 import VeterinaryDetail from './views/admin/VeterinaryDetail';
 import SearchVeterinary from './views/SearchVeterinary';
-import AddVet from './views/AddVet';
 import NewVeterinary from './views/NewVeterinary';
 import VeterinaryComments from './views/admin/VeterinaryComments';
+import Error404 from './views/Error404';
 
 function App() {
   return (
@@ -45,6 +45,7 @@ function App() {
             <Route path='mis-veterinarias/comentarios' element={<VeterinaryComments />}/>
             <Route path='roles' element={<Roles />}/>
           </Route>
+          <Route path='*' element={<Error404 />}/>
         </Routes>
       </AuthProvider>
     </HashRouter>

@@ -32,7 +32,6 @@ const VeterinaryInfo = ({veterinary, setVeterinary, email, setEmail, telephone, 
         }
         try {
             const response = await clienteAxios.put(`veterinary/edit/${id}`, data, config);
-            console.log(response);
             if (response.status == 200) {
                 Swal.fire({
                     position: 'top-end',

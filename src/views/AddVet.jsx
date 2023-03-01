@@ -52,7 +52,6 @@ const AddVet =()=>{
 
     const deleteImage = (blob) => {
         setImage(image.filter(x => x !== blob));
-        console.log(image.filter(x => x !== blob));
        
     }
 
@@ -71,7 +70,7 @@ const AddVet =()=>{
 
     const getVeterinaries = async () =>{
         try{
-            const response = await clienteAxios.get("https://www.inegi.org.mx/app/api/denue/v1/consulta/BuscarEntidad/Veterinaria/23/1/1000/dcd3720b-ed53-44d8-9630-da796b73fe3f"); 
+            const response = await clienteAxios.get(`https://www.inegi.org.mx/app/api/denue/v1/consulta/BuscarEntidad/Veterinaria/23/1/1000/${import.meta.env.VITE_API_DENUE}`); 
 
             if(response.status == 200){ 
                 setVeterinaries([response.data])
@@ -99,7 +98,6 @@ const AddVet =()=>{
             
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        console.log(selectVet);
         const token = localStorage.getItem('localtoken');
         if (!token) {
           setLoading(false);
@@ -159,7 +157,6 @@ const AddVet =()=>{
                  }
                  
              } catch (error) {
-                console.log(error.response);
                 setLoader(false);  
                  if(error.response.data.status === 400){
                      setClee({...clee, error: error.response.data.errors.clee});

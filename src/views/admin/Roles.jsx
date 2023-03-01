@@ -30,7 +30,6 @@ const Roles = () => {
         setRoles(response.data.roles);
       }
     } catch (error) {
-      console.log(error);
       Swal.fire('Lo sentimos', 'Hubo un error', 'error')
     }
   }

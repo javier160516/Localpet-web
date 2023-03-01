@@ -12,7 +12,6 @@ const Navigation = () => {
   const { signOff, auth, setAuth } = useAuth();
   const [styles, setStyles] = useState('fixed left-[-150%]');
 
-  console.log(auth);
   const handleNav = () => {
     setNav(!nav)
     if (nav) {
