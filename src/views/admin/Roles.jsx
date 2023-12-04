@@ -5,7 +5,7 @@ import 'tw-elements';
 import clienteAxios from '../../config/axios';
 import Swal from 'sweetalert2';
 const Roles = () => {
-  document.title = 'Localpet | Roles'
+  document.title = 'My Happy Pet | Roles'
   const [roles, setRoles] = useState({});
 
   useEffect(() => {

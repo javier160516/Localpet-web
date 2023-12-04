@@ -11,13 +11,13 @@ const AboutUs = () => {
       </div>
       {/* Nosotros */}
       <div className='w-11/12 md:w-10/12 mx-auto shadow-md my-10 p-5 bg-gray-100'>
-        <h2 className='text-center text-2xl font-AkayaKanadaka uppercase font-bold text-orange-600'>Localpet</h2>
+        <h2 className='text-center text-2xl font-AkayaKanadaka uppercase font-bold text-orange-600'>My Happy Pet</h2>
         <div className='my-5'>
           <p>
-            Somos una empresa de desarrollo de software cuyo objetivo es ayudar a la comunidad ofreciendo servicios de localización de veterinarias a cualquier hora del día dentro de la zona de <span className='font-bold'>Cancún, Quintana Roo.</span>
+          MYSOFT TECHNOLOGY es una empresa dedicada al desarrollo de software multiplataforma y multilenguaje fundada en 2020 en la ciudad de <span className='font-bold'>Cancún Quintana Roo, México. </span>
           </p>
           <p className='mt-3'>
-            <span className='font-bold text-orange-500'>Localpet</span> surgió a través del problema de que la mascota de alguna persona se enferma o sufre un accidente a mitad de la noche. Gracias a esta problematica se planteó la pregunta de, ¿Porqué no hacer un sistema dondé una persona pueda registrarse y localizar su veterinaria más cercana usando geolocalización?
+            <span className='font-bold text-orange-500'>My Happy Pet</span> surgió a través del problema de que la mascota de alguna persona se enferma o sufre un accidente a mitad de la noche. Gracias a esta problematica se planteó la pregunta de, ¿Porqué no hacer un sistema dondé una persona pueda registrarse y localizar su veterinaria más cercana usando geolocalización?
           </p>
         </div>
       </div>

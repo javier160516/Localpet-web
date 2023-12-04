@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import localpet from '../assets/localpet.png'
+import localpet from '../assets/localpet-favicon.svg'
 import Swal from 'sweetalert2';
 import Loader from '../helpers/Loader';
 import clienteAxios from '../config/axios';
@@ -44,6 +44,9 @@ const ForgotPassword = () => {
       <div className='w-11/12 sm:w-8/12 md:w-7/12 lg:w-4/12 bg-white shadow border rounded-xl px-10 py-5' >
         <div className='flex justify-center'>
           <img src={localpet} alt="" width={100} />
+        </div>
+        <div className='flex justify-center items-center'>
+          <p className="font-AkayaKanadaka ml-4 text-2xl text-orange-500 font-bold tracking-wider">My Happy Pet</p>
         </div>
         <div className='flex justify-center font antialiased font-bold text-xl mt-10 mb-3'>
           <h1>Restablece tu contraseña</h1>

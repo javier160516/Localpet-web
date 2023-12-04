@@ -14,6 +14,13 @@ module.exports = {
       },
       backgroundImage: {
         'banner-veterinaria': "url('./src/assets/banner-about.jpg')"
+      },
+      colors:
+      {
+        'azulito':'#5CE1E6',
+        'moradito':'#655E8A',
+        'letra':'#5D6088',
+        'campos':'#54BDDA'
       }
     },
   },

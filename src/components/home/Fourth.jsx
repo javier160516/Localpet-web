@@ -8,7 +8,7 @@ import "animate.css/animate.min.css";
 const Fourth = () => {
     return (
         <div className=''>
-            <p className='font-bol text-center text-4xl font-bold text-orange-400 py-10'>Beneficios de LocalPet </p>
+            <p className='font-bol text-center text-4xl font-bold text-orange-400 py-10'>Beneficios de My Happy Pet </p>
             <div className='w-full py-[3rem] px-4'>
                 <div className='max-w-[1000px] mx-auto grid md:grid-cols-3 gap-10'>
                     <AnimationOnScroll initiallyVisible={false} animateIn="animate__fadeInRight" duration={1}>
@@ -21,8 +21,8 @@ const Fourth = () => {
                     <AnimationOnScroll initiallyVisible={false} animateIn="animate__fadeInLeft" duration={1}>
                         <div className=' flex flex-col p-4 my-4 '>
                             <img className='w-40 mx-auto mt-[-3rem]' src={clientes} alt="icono-clientes" />
-                            <p className='font-bold text-center text-xl'>Más clientes</p>
-                            <p className=''>Al elevar el alcance de tu clínica también incrementara el número de clientes.</p>
+                            <p className='font-bold text-center text-xl'>Comunicación</p>
+                            <p className=''>Al elevar el conocimiento sobre temas, podrás llegar con las personas más capacitas.</p>
                         </div>
                     </AnimationOnScroll>
                     <AnimationOnScroll initiallyVisible={false} animateIn="animate__fadeInRight" duration={1}>

@@ -2,7 +2,7 @@ import React, {useState, useEffect, Component} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Header from '../components/templates/Header';
-import Footer  from '../components/templates/footer';
+import Footer  from '../components/templates/Footer';
 import clienteAxios from '../config/axios';
 import useAuth from '../hooks/useAuth';
 import Loader from '../helpers/Loader';

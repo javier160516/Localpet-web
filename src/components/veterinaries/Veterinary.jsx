@@ -29,7 +29,7 @@ const Veterinary = ({vet, deleteVeterinary}) => {
                     <FontAwesomeIcon icon={faEye}  className='lg:mr-2'/>
                     Ver
                   </Link>
-                  <Link to='2/edit' type='button' className='flex flex-col lg:flex-row items-center justify-center bg-orange-500 hover:bg-orange-600 text-white py-2 px-3 rounded-lg transition-all duration-300 lg:mb-2'>
+                  <Link to='2/edit' type='button' className='flex flex-col lg:flex-row items-center justify-center bg-orange-500 hover:bg-gaa-600 text-white py-2 px-3 rounded-lg transition-all duration-300 lg:mb-2'>
                     <FontAwesomeIcon icon={faPencil}  className='lg:mr-2'/>
                     Editar
                   </Link>

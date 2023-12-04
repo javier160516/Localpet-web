@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonDigging } from '@fortawesome/free-solid-svg-icons';
 
 const AdminVeterinary = () => {
-  document.title = 'Localpet | Inicio'
+  document.title = 'My Happy Pet | Inicio'
   return (
     <div className='h-full flex flex-col justify-center items-center'>
       <FontAwesomeIcon icon={faPersonDigging} className='h-72 text-gray-400' />
