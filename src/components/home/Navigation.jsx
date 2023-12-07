@@ -68,17 +68,12 @@ const Navigation = () => {
 
           <div>
             <ul className="hidden md:flex gap-5 items-center uppercase">
-            <li className="">
-                        <NavLink to='/informacion' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
-                          <FontAwesomeIcon icon={faCircleInfo} className='ml-2' />
-                        </NavLink>
-                      </li>
-              <li className="flex">
-                <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" class="relative inline-flex items-center text-xl font-medium text-center text-white hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400" type="button">
-                  <FontAwesomeIcon icon={faBell} className='ml-2' />
-                  <div class="absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full -top-0.5 start-2.5 dark:border-gray-900"></div>
-                </button>
+              <li className="">
+                <NavLink to='/informacion' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
+                  <FontAwesomeIcon icon={faCircleInfo} className='ml-2' />
+                </NavLink>
               </li>
+
               <li className="flex">
                 <Link to="/servicios" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
                   Servicios
@@ -98,6 +93,7 @@ const Navigation = () => {
                 <li>
                   <div>
                     <div className="flex gap-4">
+
                       <div className="dropdown inline-block relative">
                         <button className="transition-all duration-200 hover:text-black text-white mx-3 rounded-full md:ml-0 md:mr-0 inline-flex items-center">
                           <div>
@@ -130,6 +126,12 @@ const Navigation = () => {
                         <NavLink to='/carrito' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
                           <FontAwesomeIcon icon={faCartShopping} className='ml-2' />
                         </NavLink>
+                      </li>
+                      <li className="flex">
+                        <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" class="relative inline-flex items-center text-xl font-medium text-center text-white hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400" type="button">
+                          <FontAwesomeIcon icon={faBell} className='ml-2' />
+                          <div className="absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full -top-0.5 start-2.5 dark:border-gray-900"></div>
+                        </button>
                       </li>
                     </div>
                   </div>

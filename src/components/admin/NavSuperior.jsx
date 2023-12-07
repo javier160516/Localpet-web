@@ -32,7 +32,7 @@ const NavSuperior = ({ showSidebar, setShowSidebar, styles, setStyles }) => {
                 </button>
             </div>
             <div className='flex items-center'>
-                <div className='bg-orange-500 rounded-full w-9 h-9 bg-[url("./assets/prueba-face.jpg")] bg-cover bg-center hover:cursor-pointer'>
+                <div className='bg-orange-500 rounded-full w-9 h-9 bg-[url("./assets/imgUsers/wilmer.jpg")] bg-cover bg-center hover:cursor-pointer'>
                 </div>
                 <p className='ml-3'>{auth.user.name} {auth.user.last_name}</p>
             </div>

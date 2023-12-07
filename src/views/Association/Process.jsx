@@ -6,10 +6,10 @@ const process = () => {
         <div className="container">
             <Header />
             <div className='flex justify-center'>
-            <div class="my-6 mb-6 max-w-lg rounded overflow-hidden shadow-lg">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">Proceso de Adopción</div>
-                        <p class="text-gray-700 text-base">
+            <div className="my-6 mb-6 max-w-lg rounded overflow-hidden shadow-lg">
+                    <div className="px-6 py-4">
+                        <div className="font-bold text-xl mb-2">Proceso de Adopción</div>
+                        <p className="text-gray-700 text-base">
                         Adoptar un perro es una decisión importante. A continuación, se detalla el proceso de adopción para garantizar que encuentres el compañero peludo perfecto y que ambos tengan una vida feliz juntos.
                         </p>
                         <li>Visita el refugio o centro de adopción de tu elección.</li>

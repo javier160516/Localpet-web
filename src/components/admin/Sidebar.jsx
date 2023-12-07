@@ -23,7 +23,7 @@ const Sidebar = ({ showSidebar, styles, setStyles }) => {
         <div>
           <div className='border-b border-b-white w-full'>
             <div className='px-3 w-1/2 mx-auto my-4'>
-              <img src={logo} alt="logo-localpet" className='' />
+              <img src={logo} alt="logo-myhappypet" className='' />
             </div>
           </div>
           <div className='text-white transition-all duration-200'>
