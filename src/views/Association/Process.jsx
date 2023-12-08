@@ -7,7 +7,7 @@ const process = () => {
             <Header />
             <div className='flex justify-center'>
             <div className="my-6 mb-6 max-w-lg rounded overflow-hidden shadow-lg">
-                    <div className="px-6 py-4">
+                    <ul className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">Proceso de Adopción</div>
                         <p className="text-gray-700 text-base">
                         Adoptar un perro es una decisión importante. A continuación, se detalla el proceso de adopción para garantizar que encuentres el compañero peludo perfecto y que ambos tengan una vida feliz juntos.
@@ -18,7 +18,7 @@ const process = () => {
                 <li>El personal del refugio revisará tu solicitud y puede realizar una entrevista para asegurarse de que cumples con los requisitos necesarios.</li>
                 <li>Si tu solicitud es aprobada, podrás elegir a tu nuevo amigo peludo y llevarlo a su nuevo hogar.</li>
                 <li>Además de una tarifa de adopción, es importante tener en cuenta los costos continuos de cuidado y atención del perro, como alimentación, atención veterinaria y más.</li>
-                    </div>
+                    </ul>
             </div>
             </div>
             <h1 className='mb-3 text-center text-orange-500 font-bold text-3xl uppercase'>Recuerda que adoptar un perro es un compromiso a largo plazo. Asegúrate de estar preparado para brindarle amor y cuidado a tu nuevo amigo.</h1>

@@ -27,7 +27,7 @@ const RouteProtected = () => {
               styles={styles}
               setStyles={setStyles}
             />
-            <main className='h-full pb-16'>
+            <main className='h-full pb-16 overflow-y-auto'>
               <Outlet />
             </main>
           </div>
