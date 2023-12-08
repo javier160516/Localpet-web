@@ -4,7 +4,7 @@ import Veterinary from '../../components/veterinaries/Veterinary';
 import clienteAxios from '../../config/axios'
 
 const Veterinaries = () => {
-  document.title = 'Localpet | Mis Veterinarias'
+  document.title = 'My Happy Pet | Mis Veterinarias'
   const [veterinaries, setVeterinaries] = useState([])
   useEffect(() => {
     getVeterinaries();
