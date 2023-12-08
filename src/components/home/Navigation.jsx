@@ -131,12 +131,13 @@ const Navigation = () => {
                           <FontAwesomeIcon icon={faCartShopping} className='ml-2' />
                         </NavLink>
                       </li>
+                      {/*  NO MÁS PORQUE NO FUNCIONO LA PUERCA CAMPANITA
                       <li className="flex">
                         <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" class="relative inline-flex items-center text-xl font-medium text-center text-white hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400" type="button">
                           <FontAwesomeIcon icon={faBell} className='ml-2' />
                           <div className="absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full -top-0.5 start-2.5 dark:border-gray-900"></div>
                         </button>
-                      </li>
+                      </li> */}
                     </div>
                   </div>
                 </li>
