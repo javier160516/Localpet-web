@@ -5,7 +5,6 @@ import letras from "../../assets/localpet-letras.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faRightFromBracket, faXmark, faGear, faShop, faCartPlus, faCartShopping, faInfo, faCircleInfo, faBell } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hooks/useAuth';
-import clienteAxios from "../../config/axios";
 
 const Navigation = () => {
   const [nav, setNav] = useState(true)
@@ -68,24 +67,29 @@ const Navigation = () => {
 
           <div>
             <ul className="hidden md:flex gap-5 items-center uppercase">
-              <li className="">
-                <NavLink to='/informacion' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
+            <li className="">
+                <NavLink to='../../informacion' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
                   <FontAwesomeIcon icon={faCircleInfo} className='ml-2' />
+                </NavLink>
+              </li>
+              <li className="">
+                <NavLink to='../../eventos' className='hover:text-black text-white font-medium transition-all duration-200 text-center'>
+                  Eventos
                 </NavLink>
               </li>
 
               <li className="flex">
-                <Link to="/servicios" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
+                <Link to="../../servicios" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
                   Servicios
                 </Link>
               </li>
               <li className="flex">
-                <Link to="/asociaciones-civiles" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
+                <Link to="../../asociaciones-civiles" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
                   Adopciones
                 </Link>
               </li>
               <li className="flex">
-                <Link to="/buscar-veterinaria" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
+                <Link to="../../buscar-veterinaria" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
                   Buscar veterinaria
                 </Link>
               </li>
@@ -103,7 +107,7 @@ const Navigation = () => {
                         </button>
                         <ul className="dropdown-menu absolute hidden shadow-lg bg-orange-500 rounded-md w-44 capitalize right-0 z-[9999]">
                           <li className="">
-                            <NavLink to='panel/mis-veterinarias/registrar-veterinaria' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white text-white py-2 px-4 block blackstext-white pace-no-wrap'>
+                            <NavLink to='../panel/mis-veterinarias/registrar-veterinaria' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white text-white py-2 px-4 block blackstext-white pace-no-wrap'>
                               Mis Veterinarias
                               <FontAwesomeIcon icon={faShop} className='ml-2' />
                             </NavLink>
@@ -123,7 +127,7 @@ const Navigation = () => {
                         </ul>
                       </div>
                       <li className="">
-                        <NavLink to='/carrito' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
+                        <NavLink to='../../carrito' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
                           <FontAwesomeIcon icon={faCartShopping} className='ml-2' />
                         </NavLink>
                       </li>
@@ -139,12 +143,12 @@ const Navigation = () => {
               ) : (
                 <div className="flex items-center justify-center gap-5">
                   <li className="flex">
-                    <Link to="/iniciar-sesion" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
+                    <Link to="../../iniciar-sesion" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
                       Iniciar Sesión
                     </Link>
                   </li>
                   <li className="bg-orange-500 border shadow-inner rounded-lg p-2 hover:bg-orange-400 transition-all duration-300">
-                    <Link to="/registrarse" className="text-white hover:text-black">
+                    <Link to="../../registrarse" className="text-white hover:text-black">
                       Registrate
                     </Link>
                   </li>
@@ -156,24 +160,24 @@ const Navigation = () => {
 
         <div>
           <nav className={styles}>
-            <Link to="/" className="ml-6 flex mt-4 items-center justify-center">
+            <Link to="../" className="ml-6 flex mt-4 items-center justify-center">
               <img src={logo} alt="logo-locatpet" width={80} />
               <img src={letras} alt='localpet' width={90} />
             </Link>
             <ul className='pt-5'>
               <li className='text-black text-white hover:bg-black text-white hover:cursor-pointer transition-all duration-200'>
-                <Link to='/' className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Inicio</Link>
+                <Link to='../../' className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Inicio</Link>
               </li>
               <li className='text-black text-white hover:bg-black text-white hover:cursor-pointer transition-all duration-200'>
                 <Link to='buscar-veterinaria' className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Buscar veterinaria</Link>
               </li>
               {Object.keys(auth).length > 0 && (
                 <li className='text-black text-white hover:bg-black text-white hover:cursor-pointer transition-all duration-200'>
-                  <Link to='registrar-veterinaria' className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Registrar Veterinaria</Link>
+                  <Link to='../../registrar-veterinaria' className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Registrar Veterinaria</Link>
                 </li>
               )}
               <li className='text-black text-white hover:bg-black text-white hover:cursor-pointer transition-all duration-200'>
-                <Link to='sobre-nosotros' className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Sobre Nosotros</Link>
+                <Link to='../../sobre-nosotros' className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Sobre Nosotros</Link>
               </li>
               {Object.keys(auth).length > 0 ? (
                 <div>
@@ -184,10 +188,10 @@ const Navigation = () => {
               ) : (
                 <div>
                   <li className='text-black text-white hover:bg-black text-white hover:cursor-pointer transition-all duration-200'>
-                    <Link to={'/iniciar-sesion'} className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Iniciar Sesión</Link>
+                    <Link to={'../../iniciar-sesion'} className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Iniciar Sesión</Link>
                   </li>
                   <li className='text-black text-white hover:bg-black text-white hover:cursor-pointer transition-all duration-200'>
-                    <Link to={'/registrarse'} className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Registrarse</Link>
+                    <Link to={'../../registrarse'} className="hover:text-black-text-white 600 block p-4 transition-all duration-300 hover:transform hover:translate-x-2">Registrarse</Link>
                   </li>
                 </div>
               )

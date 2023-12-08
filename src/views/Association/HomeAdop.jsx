@@ -12,16 +12,16 @@ const home = () => {
                 <div className='text-black flex flex-1 justify-start'>
                     <ul className='flex px-12 flex-col justify-center text-black'>
                     <p className='w-full text-center text-2xl font-bold'>Te ofrecemos las siguientes opciones</p>
-                        <Link to={'/asociaciones-procesos'} relative="path" className='flex justify-center lg:justify-start hover:ml-3 transition-all duration-300 my-2'>
+                        <Link to={'../../asociaciones-procesos'} relative="path" className='flex justify-center lg:justify-start hover:ml-3 transition-all duration-300 my-2'>
                             <img src={points} loading='lazy' width={15} />
                             <p className='ml-2'>Proceso de adopcion</p>
                         </Link>
-                        <Link to={'/asociaciones-adopciones'} relative="path" className='flex justify-center lg:justify-start hover:ml-3 transition-all duration-300 my-2'>
+                        <Link to={'../../asociaciones-adopciones'} relative="path" className='flex justify-center lg:justify-start hover:ml-3 transition-all duration-300 my-2'>
                             <img src={points} loading='lazy' width={15} />
                             <p className='ml-2'>Mascotas en adopcion</p>
                         </Link>
 
-                        <Link to={'/asociaciones-exitos'} relative="path" className='flex justify-center lg:justify-start hover:ml-3 transition-all duration-300 my-2'>
+                        <Link to={'../../asociaciones-exitos'} relative="path" className='flex justify-center lg:justify-start hover:ml-3 transition-all duration-300 my-2'>
                             <img src={points} loading='lazy' width={15} />
                             <p className='ml-2'>Historias de exito</p>
                         </Link>

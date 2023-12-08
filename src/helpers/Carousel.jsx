@@ -22,22 +22,22 @@ const Carousel = () => {
         <div className='flex items-center max-w-sm md:max-w-lg lg:w-full mb-5 lg:mb-0 h-96'>
             <Slider {...settings} className='w-full mt-8'>
                 <div>
-                    <img src={banner} alt="banner veterinaria localpet" />
+                    <img src={banner} alt="banner veterinaria my happy pet" />
                 </div>
                 <div>
-                    <img src={banner2} alt="banner veterinaria localpet" />
+                    <img src={banner2} alt="banner veterinaria my happy pet" />
                 </div>
                 <div>
-                    <img src={banner3} alt="banner veterinaria localpet" />
+                    <img src={banner3} alt="banner veterinaria my happy pet" />
                 </div>
                 <div>
-                    <img src={banner4} alt="banner veterinaria localpet" />
+                    <img src={banner4} alt="banner veterinaria my happy pet" />
                 </div>
                 <div>
-                    <img src={banner5} alt="banner veterinaria localpet" />
+                    <img src={banner5} alt="banner veterinaria my happy pet" />
                 </div>
                 <div>
-                    <img src={banner6} alt="banner veterinaria localpet" />
+                    <img src={banner6} alt="banner veterinaria my happy pet" />
                 </div>
             </Slider>
         </div>

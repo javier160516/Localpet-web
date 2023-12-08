@@ -9,7 +9,7 @@ const Adoption = () => {
         <div className="bg-[#FAFAFA] w-full">
             <Header />
             <div className='grid grid-flow-col place-content-center gap-20 PhotosPet'>
-                <div className="row-span-1 ..."><Photos /></div>
+            <Photos />
                 <div className="row-span-2 ..."><Text /></div>
             </div>
             <Footer />

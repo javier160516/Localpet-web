@@ -45,7 +45,7 @@ function App() {
             <Route path='forgot-password/:token' element={<ConfirmResetPassword />}/>
             <Route path='carrito' element={<ProductList/>}/>
             <Route path='voluntario' element={<Voluntary/>}/>
-            <Route path='servicios' element={<Events/>}/>
+            <Route path='eventos' element={<Events/>}/>
             <Route path='asociaciones-civiles' element={<Association/>}/>
             <Route path='asociaciones-adopciones' element={<AssocAdoptions/>}/>
             <Route path='asociaciones-procesos' element={<AssocProcess/>}/>
