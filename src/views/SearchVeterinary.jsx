@@ -71,7 +71,7 @@ const SearchVeterinary = () => {
         <div className='bg-[#E5E9F2] py-5 overflow-y-auto'>
           <h1 className='text-center text-orange-500 font-bold text-3xl uppercase'>Buscar Veterinaria</h1>
           {/* Tab for search veterinaries with INEGI API */}
-          <div>
+          {/* <div>
           <form className='w-10/12 my-5 mx-auto shadow-lg'>
             <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div className="flex justify-end relative">
@@ -84,7 +84,7 @@ const SearchVeterinary = () => {
                 <button type="submit" className="text-white absolute end-2.5 mx-6 bottom-2.5 bg-orange-500 hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
             </div>
           </form>
-          </div>
+          </div> */}
           <div className='w-10/12 my-5 mx-auto shadow-lg'>
             <MapContainer style={{ height: 450 }} center={position} zoom={zoom} >
               <TileLayer

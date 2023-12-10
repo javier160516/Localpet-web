@@ -12,6 +12,31 @@ const Navigation = () => {
   const [styles, setStyles] = useState('fixed left-[-150%]');
   const [location, setLocation] = useState(window.location);
 
+  useEffect(() => {
+    // const obtenerDatos = async () => {
+    //   const token = localStorage.getItem('localtoken');
+    //   if (token !== null) {
+    //     try {
+    //       const config = {
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           Authorization: `Bearer ${token}`
+    //         }
+    //       }
+    //       const response = await clienteAxios.get('/home', config);
+    //       if (response.data.status == 200) {
+    //         setAuth(response.data.user);
+    //       }
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   } else {
+    //     setAuth({});
+    //   }
+    // }
+    // obtenerDatos();
+  }, []);
+
   const handleNav = () => {
     setNav(!nav)
     if (nav) {
@@ -42,7 +67,7 @@ const Navigation = () => {
 
           <div>
             <ul className="hidden md:flex gap-5 items-center uppercase">
-              <li className="">
+            <li className="">
                 <NavLink to='../../informacion' className='transition-all duration-300 rounded-t-md hover:bg-orange-400 hover:text-black text-white py-2 px-4  blackstext-white pace-no-wrap'>
                   <FontAwesomeIcon icon={faCircleInfo} className='ml-2' />
                 </NavLink>
@@ -51,12 +76,6 @@ const Navigation = () => {
                 <NavLink to='../../eventos' className='hover:text-black text-white font-medium transition-all duration-200 text-center'>
                   Eventos
                 </NavLink>
-              </li>
-
-              <li className="flex">
-                <Link to="../../servicios" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
-                  Servicios
-                </Link>
               </li>
               <li className="flex">
                 <Link to="../../asociaciones-civiles" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
@@ -108,7 +127,7 @@ const Navigation = () => {
                       </li>
                       {/*  NO MÁS PORQUE NO FUNCIONO LA PUERCA CAMPANITA
                       <li className="flex">
-                        <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" className="relative inline-flex items-center text-xl font-medium text-center text-white hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400" type="button">
+                        <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" class="relative inline-flex items-center text-xl font-medium text-center text-white hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400" type="button">
                           <FontAwesomeIcon icon={faBell} className='ml-2' />
                           <div className="absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full -top-0.5 start-2.5 dark:border-gray-900"></div>
                         </button>
@@ -117,20 +136,18 @@ const Navigation = () => {
                   </div>
                 </li>
               ) : (
-                <li className="flex items-center justify-center gap-5">
-                  <ul>
-                    <li className="flex">
-                      <Link to="../../iniciar-sesion" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
-                        Iniciar Sesión
-                      </Link>
-                    </li>
-                    <li className="bg-orange-500 border shadow-inner rounded-lg p-2 hover:bg-orange-400 transition-all duration-300">
-                      <Link to="../../registrarse" className="text-white hover:text-black">
-                        Registrate
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
+                <div className="flex items-center justify-center gap-5">
+                  <li className="flex">
+                    <Link to="../../iniciar-sesion" className="hover:text-black text-white font-medium transition-all duration-200 text-center">
+                      Iniciar Sesión
+                    </Link>
+                  </li>
+                  <li className="bg-orange-500 border shadow-inner rounded-lg p-2 hover:bg-orange-400 transition-all duration-300">
+                    <Link to="../../registrarse" className="text-white hover:text-black">
+                      Registrate
+                    </Link>
+                  </li>
+                </div>
               )}
             </ul>
           </div>

@@ -3,7 +3,7 @@ import Header from '../../components/associations/SecondNav';
 import Footer from '../../components/templates/Footer';
 const process = () => {
     return (
-        <div className="container">
+        <div className="">
             <Header />
             <div className='flex justify-center'>
             <div className="my-6 mb-6 max-w-lg rounded overflow-hidden shadow-lg">
