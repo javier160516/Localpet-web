@@ -12,6 +12,8 @@ const Events = () => {
   const [date, setDate] = useState({ value: '', error: '' })
   const [time, setTime] = useState({ value: '', error: '' })
   const [description, setDescription] = useState({ value: '', error: '' })
+  const [imgurl, setImgurl] = useState({ value: '', error: '' })
+  const [datosurl, setDatosurl] = useState({ value: '', error: '' })
 
   useEffect(() => {
     dataEvents();
@@ -28,9 +30,12 @@ const Events = () => {
         setDate({ value: response.data.events.Fecha, error: '' });
         setTime({ value: response.data.events.Hora, error: '' });
         setDescription({ value: response.data.events.Descripcion, error: '' });
+        setImgurl({ value: response.data.events.Img_url, error: '' });
+        setDatosurl({ value: response.data.events.Datosurl, error: '' });
 
       }
     } catch (error) {
+      console.log(error);
     }
 
   }

@@ -383,12 +383,12 @@ const AddVet = () => {
               {email.error ? <p>{email.error}</p> : null}
             </div>
 
-            <div className="flex flex-col justify-center">
+            {/* <div className="flex flex-col justify-center">
               <label className="font-bold block ml-2 mb-1 text-sm">
                 Imagen
               </label>
               <input type="file" accept="image/png, image/jpg, image/jpeg" />
-            </div>
+            </div> */}
 
             {loader ? (
               <div className="flex justify-center items-center col-span-1 md:col-span-2 lg:col-span-2 my-2">
