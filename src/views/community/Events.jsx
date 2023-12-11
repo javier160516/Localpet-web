@@ -43,7 +43,6 @@ const Events = () => {
   return (
     <div>
       <Header />
-      {events.length}
       <div className='px-7 mt-5'>
         <h4 className='text-3xl text-center font-semibold text-orange-500 '>Próximos eventos</h4>
       </div>
